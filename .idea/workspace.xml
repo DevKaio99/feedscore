@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a3cc0697-f202-4d94-a34f-8b233228efc3" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Record" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="1.2345327933941455E-223" />
+      <entry key="S10" value="3.5135918849435913E-112" />
+      <entry key="S30" value="7.056419497729938E-38" />
+      <entry key="S60" value="2.661466374741309E-19" />
+      <entry key="M2" value="5.587988936161685E-10" />
+      <entry key="M5" value="4.198316436295475E-4" />
+      <entry key="M10" value="0.0772322060442691" />
+      <entry key="M15" value="0.5730615662532672" />
+      <entry key="M30" value="5.379785416852641" />
+      <entry key="H1" value="21.08029062083267" />
+      <entry key="H2" value="50.9003451691756" />
+      <entry key="H4" value="88.71691180808263" />
+      <entry key="D1" value="225.41611130628328" />
+      <entry key="W1" value="305.29574330251126" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="1.0000000002026908" />
+      <entry key="MS500" value="1.0115177282600867" />
+      <entry key="S2" value="1.3275983509645908" />
+      <entry key="S5" value="1.639936206922154" />
+      <entry key="S10" value="1.7999601283327527" />
+      <entry key="S30" value="1.9283023441428666" />
+      <entry key="S60" value="1.963485047389623" />
+      <entry key="M2" value="1.9823253812557913" />
+      <entry key="M5" value="2.0490253050539375" />
+      <entry key="M10" value="2.2852697592137448" />
+      <entry key="M15" value="2.8831054130445324" />
+      <entry key="M30" value="8.18897489585066" />
+      <entry key="H1" value="24.219400993268522" />
+      <entry key="H2" value="51.58466890250181" />
+      <entry key="H4" value="83.39638168961501" />
+      <entry key="D1" value="170.733525009949" />
+      <entry key="W1" value="215.31501505950473" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="8.801274055731673E-4" />
+      <entry key="MS500" value="0.24854038006429172" />
+      <entry key="S2" value="0.9498276857982167" />
+      <entry key="S5" value="1.4397569677105697" />
+      <entry key="S10" value="1.687718602736472" />
+      <entry key="S30" value="1.887659545951225" />
+      <entry key="S60" value="1.9427217176377078" />
+      <entry key="M2" value="1.971821947821192" />
+      <entry key="M5" value="2.0449719191111972" />
+      <entry key="M10" value="2.3596017006279664" />
+      <entry key="M15" value="3.452604027730782" />
+      <entry key="M30" value="13.559405230941703" />
+      <entry key="H1" value="45.28349040234173" />
+      <entry key="H2" value="102.46658183528525" />
+      <entry key="H4" value="172.097898255754" />
+      <entry key="D1" value="396.14457942267455" />
+      <entry key="W1" value="520.6098715487907" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3Kjq6eKEt0RslUtvn4u3G8CQrPo" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHELLCHECK.PATH": "I do mind",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "master",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "//wsl.localhost/Ubuntu/home/kaioprado/code/feedscore",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="infra.dtos" />
+      <recent name="application.inputs" />
+      <recent name="domain.entities.enuns" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.26222.65" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.26222.65" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a3cc0697-f202-4d94-a34f-8b233228efc3" name="Changes" comment="" />
+      <created>1792081151793</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1792081151793</updated>
+      <workItem from="1792081153012" duration="9000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="executable:docker" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.enterprise:jakarta.enterprise.cdi-api" />
+    <option featureType="dependencySupport" implementationName="java:io.quarkus:quarkus-core" />
+    <option featureType="dependencySupport" implementationName="java:io.smallrye.reactive:mutiny" />
+    <option featureType="dependencySupport" implementationName="executable:kubectl" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.ws.rs:jakarta.ws.rs-api" />
+  </component>
+</project>
