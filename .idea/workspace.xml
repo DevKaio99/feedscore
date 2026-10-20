@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3cc0697-f202-4d94-a34f-8b233228efc3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/feedscore-recebimento/src/test/java/application/usecase/SubmitFeedbackUseCaseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feedscore-recebimento/src/test/java/domain/entities/FeedbackTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feedscore-recebimento/src/test/java/domain/enums/UrgencyTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feedscore-recebimento/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/feedscore-recebimento/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feedscore-recebimento/src/main/java/HelloResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feedscore-recebimento/src/test/java/application/usecase/SubmitFeedbackUseCaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/feedscore-recebimento/src/test/java/application/usecases/SubmitFeedbackUseCaseTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,61 +35,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="3.637401246508407E-43" />
-      <entry key="MS500" value="3.252057698122271E-9" />
-      <entry key="S2" value="0.007551610133320101" />
-      <entry key="S5" value="0.1416497538690024" />
-      <entry key="S10" value="0.37636385834588637" />
-      <entry key="S30" value="0.7219993894321876" />
-      <entry key="S60" value="0.8518730491705948" />
-      <entry key="M2" value="1.0346274936913238" />
-      <entry key="M5" value="3.1368749902010284" />
-      <entry key="M10" value="8.1289783817434" />
-      <entry key="M15" value="11.99059038103163" />
-      <entry key="M30" value="19.800058657828043" />
-      <entry key="H1" value="35.4283479555307" />
-      <entry key="H2" value="69.89485705135114" />
-      <entry key="H4" value="124.72160100613536" />
-      <entry key="D1" value="311.4818031187787" />
-      <entry key="W1" value="417.24394229836395" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.000000000636112" />
+      <entry key="S2" value="1.0050220774735863" />
+      <entry key="S5" value="1.12032430538887" />
+      <entry key="S10" value="1.3468800653304485" />
+      <entry key="S30" value="1.7349527956750284" />
+      <entry key="S60" value="2.1977084994898988" />
+      <entry key="M2" value="3.1145954814790153" />
+      <entry key="M5" value="4.445926823361277" />
+      <entry key="M10" value="5.698563894520707" />
+      <entry key="M15" value="7.763788342108356" />
+      <entry key="M30" value="16.557262644016653" />
+      <entry key="H1" value="34.892531334108746" />
+      <entry key="H2" value="71.02782411698466" />
+      <entry key="H4" value="129.313157435994" />
+      <entry key="D1" value="329.9115398884366" />
+      <entry key="W1" value="443.4188044106754" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0" />
-      <entry key="S30" value="1.0000015805625662" />
-      <entry key="S60" value="1.0018858202828609" />
-      <entry key="M2" value="1.0858242911965357" />
-      <entry key="M5" value="2.495220440106076" />
-      <entry key="M10" value="5.919042759177578" />
-      <entry key="M15" value="8.620072896245183" />
-      <entry key="M30" value="14.507920608517535" />
-      <entry key="H1" value="28.49817511657365" />
-      <entry key="H2" value="60.84692406387724" />
-      <entry key="H4" value="110.71793537652381" />
-      <entry key="D1" value="248.42040538790198" />
-      <entry key="W1" value="313.8198118268082" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="7.118473321790033E-114" />
+      <entry key="S2" value="6.329034072512504E-29" />
+      <entry key="S5" value="7.515153033932919E-12" />
+      <entry key="S10" value="3.835344317663902E-6" />
+      <entry key="S30" value="0.0247871757893056" />
+      <entry key="S60" value="0.22258468415718813" />
+      <entry key="M2" value="0.6671590263154018" />
+      <entry key="M5" value="1.2979563990027332" />
+      <entry key="M10" value="2.084535431465498" />
+      <entry key="M15" value="3.6706274165794888" />
+      <entry key="M30" value="10.614561326405042" />
+      <entry key="H1" value="25.982099894325852" />
+      <entry key="H2" value="58.536617883256014" />
+      <entry key="H4" value="111.03653026902845" />
+      <entry key="D1" value="261.75150496047837" />
+      <entry key="W1" value="333.4379423930133" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="7.93017582933127E-9" />
-      <entry key="MS500" value="0.023980407816876895" />
-      <entry key="S2" value="0.3963771242222473" />
-      <entry key="S5" value="0.7846842510781626" />
-      <entry key="S10" value="1.1397639886590936" />
-      <entry key="S30" value="1.616457864353304" />
-      <entry key="S60" value="1.7960506586172835" />
-      <entry key="M2" value="2.0890399046619734" />
-      <entry key="M5" value="5.608488199905943" />
-      <entry key="M10" value="14.022239206010303" />
-      <entry key="M15" value="20.586063339513643" />
-      <entry key="M30" value="34.28823766443869" />
-      <entry key="H1" value="63.90890120316897" />
-      <entry key="H2" value="130.72333441565831" />
-      <entry key="H4" value="235.42211813059058" />
-      <entry key="D1" value="559.8954784107513" />
-      <entry key="W1" value="731.0625460430676" />
+      <entry key="MS100" value="0.9138314502294005" />
+      <entry key="MS500" value="0.9821395958366876" />
+      <entry key="S2" value="1.0003978981339925" />
+      <entry key="S5" value="1.1172791900498649" />
+      <entry key="S10" value="1.344184279410557" />
+      <entry key="S30" value="1.7571318349960612" />
+      <entry key="S60" value="2.4138339577150187" />
+      <entry key="M2" value="3.772317313198375" />
+      <entry key="M5" value="5.736365387455088" />
+      <entry key="M10" value="7.7761752417291" />
+      <entry key="M15" value="11.425128141758119" />
+      <entry key="M30" value="27.157241370839195" />
+      <entry key="H1" value="60.857473471235345" />
+      <entry key="H2" value="129.54583206331716" />
+      <entry key="H4" value="240.3318151332528" />
+      <entry key="D1" value="591.6558942162196" />
+      <entry key="W1" value="776.8554540815035" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -111,6 +107,9 @@
     "JUnit.FeedbackTest.deveClassificarUrgenciaPelaNota.executor": "Run",
     "JUnit.FeedbackTest.executor": "Run",
     "JUnit.SubmitFeedbackUseCaseTest.deveCriarFeedback.executor": "Run",
+    "JUnit.SubmitFeedbackUseCaseTest.deveCriarFeedbackEPublicar.executor": "Run",
+    "JUnit.SubmitFeedbackUseCaseTest.deveCriarFeedbackSemPublicar.executor": "Run",
+    "JUnit.SubmitFeedbackUseCaseTest.naoDeveCriarFeedbackComNotaForaDaFaixa.executor": "Run",
     "JUnit.UrgencyTest.deveLancarExcecaoParaNotaForaDaFaixa.executor": "Run",
     "JUnit.UrgencyTest.executor": "Run",
     "JUnit.UrgencyTest.retornaNotaDentroDaFaixa.executor": "Run",
@@ -150,22 +149,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SubmitFeedbackUseCaseTest.deveCriarFeedback">
-    <configuration name="FeedbackTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="feedscore-recebimento" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="domain.entities.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="domain.entities" />
-      <option name="MAIN_CLASS_NAME" value="domain.entities.FeedbackTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.SubmitFeedbackUseCaseTest.naoDeveCriarFeedbackComNotaForaDaFaixa">
     <configuration name="FeedbackTest.deveCalcularUrgenciaPelaNota" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="feedscore-recebimento" />
       <extension name="coverage">
@@ -182,60 +166,77 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FeedbackTest.deveClassificarUrgenciaPelaNota" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="feedscore-recebimento" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="domain.entities.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="domain.entities" />
-      <option name="MAIN_CLASS_NAME" value="domain.entities.FeedbackTest" />
-      <option name="METHOD_NAME" value="deveClassificarUrgenciaPelaNota(int,domain.enums.Urgency)" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SubmitFeedbackUseCaseTest.deveCriarFeedback" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="feedscore-recebimento" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="application.usecase.*" />
+          <option name="PATTERN" value="application.usecases.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="application.usecase" />
-      <option name="MAIN_CLASS_NAME" value="application.usecase.SubmitFeedbackUseCaseTest" />
+      <option name="MAIN_CLASS_NAME" value="application.usecases.SubmitFeedbackUseCaseTest" />
       <option name="METHOD_NAME" value="deveCriarFeedback" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UrgencyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SubmitFeedbackUseCaseTest.deveCriarFeedbackEPublicar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="feedscore-recebimento" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="domain.enums.*" />
+          <option name="PATTERN" value="application.usecases.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="domain.enums" />
-      <option name="MAIN_CLASS_NAME" value="domain.enums.UrgencyTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="application.usecase" />
+      <option name="MAIN_CLASS_NAME" value="application.usecases.SubmitFeedbackUseCaseTest" />
+      <option name="METHOD_NAME" value="deveCriarFeedbackEPublicar" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SubmitFeedbackUseCaseTest.deveCriarFeedbackSemPublicar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="feedscore-recebimento" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="application.usecases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="application.usecase" />
+      <option name="MAIN_CLASS_NAME" value="application.usecases.SubmitFeedbackUseCaseTest" />
+      <option name="METHOD_NAME" value="deveCriarFeedbackSemPublicar" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SubmitFeedbackUseCaseTest.naoDeveCriarFeedbackComNotaForaDaFaixa" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="feedscore-recebimento" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="application.usecases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="application.usecase" />
+      <option name="MAIN_CLASS_NAME" value="application.usecases.SubmitFeedbackUseCaseTest" />
+      <option name="METHOD_NAME" value="naoDeveCriarFeedbackComNotaForaDaFaixa" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SubmitFeedbackUseCaseTest.naoDeveCriarFeedbackComNotaForaDaFaixa" />
+        <item itemvalue="JUnit.SubmitFeedbackUseCaseTest.deveCriarFeedbackEPublicar" />
+        <item itemvalue="JUnit.SubmitFeedbackUseCaseTest.deveCriarFeedbackSemPublicar" />
         <item itemvalue="JUnit.SubmitFeedbackUseCaseTest.deveCriarFeedback" />
         <item itemvalue="JUnit.FeedbackTest.deveCalcularUrgenciaPelaNota" />
-        <item itemvalue="JUnit.FeedbackTest.deveClassificarUrgenciaPelaNota" />
-        <item itemvalue="JUnit.FeedbackTest" />
-        <item itemvalue="JUnit.UrgencyTest" />
       </list>
     </recent_temporary>
   </component>
