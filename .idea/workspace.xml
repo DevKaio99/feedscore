@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3cc0697-f202-4d94-a34f-8b233228efc3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/feedscore-recebimento/src/test/java/application/usecases/SubmitFeedbackUseCaseTestIT.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feedscore-recebimento/src/test/java/application/usecase/SubmitFeedbackUseCaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/feedscore-recebimento/src/test/java/application/usecases/SubmitFeedbackUseCaseTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,61 +35,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.000000000636112" />
-      <entry key="S2" value="1.0050220774735863" />
-      <entry key="S5" value="1.12032430538887" />
-      <entry key="S10" value="1.3468800653304485" />
-      <entry key="S30" value="1.7349527956750284" />
-      <entry key="S60" value="2.1977084994898988" />
-      <entry key="M2" value="3.1145954814790153" />
-      <entry key="M5" value="4.445926823361277" />
-      <entry key="M10" value="5.698563894520707" />
-      <entry key="M15" value="7.763788342108356" />
-      <entry key="M30" value="16.557262644016653" />
-      <entry key="H1" value="34.892531334108746" />
-      <entry key="H2" value="71.02782411698466" />
-      <entry key="H4" value="129.313157435994" />
-      <entry key="D1" value="329.9115398884366" />
-      <entry key="W1" value="443.4188044106754" />
+      <entry key="MS100" value="1.2016604398055315" />
+      <entry key="MS500" value="1.725979139951947" />
+      <entry key="S2" value="1.9230990447600615" />
+      <entry key="S5" value="2.0085994067099664" />
+      <entry key="S10" value="2.429727280544906" />
+      <entry key="S30" value="4.730318422807509" />
+      <entry key="S60" value="7.704424507796384" />
+      <entry key="M2" value="12.250109356858221" />
+      <entry key="M5" value="18.89413457036358" />
+      <entry key="M10" value="23.124524451699696" />
+      <entry key="M15" value="26.193586926409136" />
+      <entry key="M30" value="35.80898939530888" />
+      <entry key="H1" value="54.5382342912345" />
+      <entry key="H2" value="90.88944195352146" />
+      <entry key="H4" value="149.46854776929953" />
+      <entry key="D1" value="351.1591177600204" />
+      <entry key="W1" value="465.2753445636308" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="7.118473321790033E-114" />
-      <entry key="S2" value="6.329034072512504E-29" />
-      <entry key="S5" value="7.515153033932919E-12" />
-      <entry key="S10" value="3.835344317663902E-6" />
-      <entry key="S30" value="0.0247871757893056" />
-      <entry key="S60" value="0.22258468415718813" />
-      <entry key="M2" value="0.6671590263154018" />
-      <entry key="M5" value="1.2979563990027332" />
-      <entry key="M10" value="2.084535431465498" />
-      <entry key="M15" value="3.6706274165794888" />
-      <entry key="M30" value="10.614561326405042" />
-      <entry key="H1" value="25.982099894325852" />
-      <entry key="H2" value="58.536617883256014" />
-      <entry key="H4" value="111.03653026902845" />
-      <entry key="D1" value="261.75150496047837" />
-      <entry key="W1" value="333.4379423930133" />
+      <entry key="MS100" value="9.975110612525236E-51" />
+      <entry key="MS500" value="9.995017159238391E-11" />
+      <entry key="S2" value="0.0031620080826691623" />
+      <entry key="S5" value="0.1023720538554672" />
+      <entry key="S10" value="0.39344132840092355" />
+      <entry key="S30" value="1.6941476026421896" />
+      <entry key="S60" value="3.178493965198637" />
+      <entry key="M2" value="5.334685131427291" />
+      <entry key="M5" value="8.545956416407982" />
+      <entry key="M10" value="10.75571733065446" />
+      <entry key="M15" value="12.747392222238352" />
+      <entry key="M30" value="19.909496311355934" />
+      <entry key="H1" value="35.314069555616356" />
+      <entry key="H2" value="67.83906688577154" />
+      <entry key="H4" value="120.48992188957169" />
+      <entry key="D1" value="272.159243933998" />
+      <entry key="W1" value="344.3305998350018" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9138314502294005" />
-      <entry key="MS500" value="0.9821395958366876" />
-      <entry key="S2" value="1.0003978981339925" />
-      <entry key="S5" value="1.1172791900498649" />
-      <entry key="S10" value="1.344184279410557" />
-      <entry key="S30" value="1.7571318349960612" />
-      <entry key="S60" value="2.4138339577150187" />
-      <entry key="M2" value="3.772317313198375" />
-      <entry key="M5" value="5.736365387455088" />
-      <entry key="M10" value="7.7761752417291" />
-      <entry key="M15" value="11.425128141758119" />
-      <entry key="M30" value="27.157241370839195" />
-      <entry key="H1" value="60.857473471235345" />
-      <entry key="H2" value="129.54583206331716" />
-      <entry key="H4" value="240.3318151332528" />
-      <entry key="D1" value="591.6558942162196" />
-      <entry key="W1" value="776.8554540815035" />
+      <entry key="MS100" value="0.2237562677404091" />
+      <entry key="MS500" value="0.747329172734744" />
+      <entry key="S2" value="1.2094205743840403" />
+      <entry key="S5" value="1.6944042212789048" />
+      <entry key="S10" value="2.548533955527036" />
+      <entry key="S30" value="6.255439007133138" />
+      <entry key="S60" value="10.753504885072779" />
+      <entry key="M2" value="17.486950706766827" />
+      <entry key="M5" value="27.381529162006903" />
+      <entry key="M10" value="33.84376529607532" />
+      <entry key="M15" value="38.91143365809362" />
+      <entry key="M30" value="55.69377380473875" />
+      <entry key="H1" value="89.83008000105448" />
+      <entry key="H2" value="158.70737010198295" />
+      <entry key="H4" value="269.93931450885066" />
+      <entry key="D1" value="623.310972408457" />
+      <entry key="W1" value="809.6046156993896" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -110,6 +110,7 @@
     "JUnit.SubmitFeedbackUseCaseTest.deveCriarFeedbackEPublicar.executor": "Run",
     "JUnit.SubmitFeedbackUseCaseTest.deveCriarFeedbackSemPublicar.executor": "Run",
     "JUnit.SubmitFeedbackUseCaseTest.naoDeveCriarFeedbackComNotaForaDaFaixa.executor": "Run",
+    "JUnit.SubmitFeedbackUseCaseTestIT.executor": "Run",
     "JUnit.UrgencyTest.deveLancarExcecaoParaNotaForaDaFaixa.executor": "Run",
     "JUnit.UrgencyTest.executor": "Run",
     "JUnit.UrgencyTest.retornaNotaDentroDaFaixa.executor": "Run",
@@ -149,19 +150,18 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SubmitFeedbackUseCaseTest.naoDeveCriarFeedbackComNotaForaDaFaixa">
-    <configuration name="FeedbackTest.deveCalcularUrgenciaPelaNota" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.SubmitFeedbackUseCaseTestIT">
+    <configuration name="SubmitFeedbackUseCaseTestIT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="feedscore-recebimento" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="domain.entities.*" />
+          <option name="PATTERN" value="application.usecases.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="domain.entities" />
-      <option name="MAIN_CLASS_NAME" value="domain.entities.FeedbackTest" />
-      <option name="METHOD_NAME" value="deveCalcularUrgenciaPelaNota(int,domain.enums.Urgency,boolean)" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="application.usecases" />
+      <option name="MAIN_CLASS_NAME" value="application.usecases.SubmitFeedbackUseCaseTestIT" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -232,11 +232,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SubmitFeedbackUseCaseTestIT" />
         <item itemvalue="JUnit.SubmitFeedbackUseCaseTest.naoDeveCriarFeedbackComNotaForaDaFaixa" />
         <item itemvalue="JUnit.SubmitFeedbackUseCaseTest.deveCriarFeedbackEPublicar" />
         <item itemvalue="JUnit.SubmitFeedbackUseCaseTest.deveCriarFeedbackSemPublicar" />
         <item itemvalue="JUnit.SubmitFeedbackUseCaseTest.deveCriarFeedback" />
-        <item itemvalue="JUnit.FeedbackTest.deveCalcularUrgenciaPelaNota" />
       </list>
     </recent_temporary>
   </component>
