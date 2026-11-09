@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3cc0697-f202-4d94-a34f-8b233228efc3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/feedscore-notificacao/src/main/java/infra/dtos/CriticalFeedbackMessageRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/feedscore.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feedscore-recebimento/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feedscore-recebimento/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feedscore-recebimento/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feedscore-recebimento/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feedscore-recebimento/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/feedscore-recebimento/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +23,8 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Record" />
         <option value="Class" />
+        <option value="Record" />
       </list>
     </option>
   </component>
@@ -105,43 +106,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JUnit.FeedbackTest.deveCalcularUrgenciaPelaNota.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.FeedbackTest.deveClassificarUrgenciaPelaNota.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.FeedbackTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SubmitFeedbackUseCaseTest.deveCriarFeedback.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SubmitFeedbackUseCaseTest.deveCriarFeedbackEPublicar.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SubmitFeedbackUseCaseTest.deveCriarFeedbackSemPublicar.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SubmitFeedbackUseCaseTest.naoDeveCriarFeedbackComNotaForaDaFaixa.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SubmitFeedbackUseCaseTestIT.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UrgencyTest.deveLancarExcecaoParaNotaForaDaFaixa.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UrgencyTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UrgencyTest.retornaNotaDentroDaFaixa.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;SHELLCHECK.PATH&quot;: &quot;I do mind&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;//wsl.localhost/Ubuntu/home/kaioprado/code/feedscore&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.FeedbackTest.deveCalcularUrgenciaPelaNota.executor": "Run",
+    "JUnit.FeedbackTest.deveClassificarUrgenciaPelaNota.executor": "Run",
+    "JUnit.FeedbackTest.executor": "Run",
+    "JUnit.SubmitFeedbackUseCaseTest.deveCriarFeedback.executor": "Run",
+    "JUnit.SubmitFeedbackUseCaseTest.deveCriarFeedbackEPublicar.executor": "Run",
+    "JUnit.SubmitFeedbackUseCaseTest.deveCriarFeedbackSemPublicar.executor": "Run",
+    "JUnit.SubmitFeedbackUseCaseTest.naoDeveCriarFeedbackComNotaForaDaFaixa.executor": "Run",
+    "JUnit.SubmitFeedbackUseCaseTestIT.executor": "Run",
+    "JUnit.UrgencyTest.deveLancarExcecaoParaNotaForaDaFaixa.executor": "Run",
+    "JUnit.UrgencyTest.executor": "Run",
+    "JUnit.UrgencyTest.retornaNotaDentroDaFaixa.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHELLCHECK.PATH": "I do mind",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "//wsl.localhost/Ubuntu/home/kaio/code/feedscore",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="infra.dtos" />
@@ -250,8 +251,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.26222.65" />
-        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.26222.65" />
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.24374.151" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.24374.151" />
       </set>
     </attachedChunks>
   </component>
