@@ -1,8 +1,8 @@
-package infra.dtos;
+package application.inputs;
 
 import java.time.Instant;
 
-public record CriticalFeedbackMessageRequestDTO(
+public record FeedbackNotificationCreateInput (
         String description,
         String urgency,
         Instant createdAt) {
