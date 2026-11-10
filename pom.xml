@@ -10,6 +10,7 @@
     <modules>
         <module>feedscore-recebimento</module>
         <module>feedscore-notificacao</module>
+	<module>feedscore-relatorio</module>
     </modules>
 
     <properties>
