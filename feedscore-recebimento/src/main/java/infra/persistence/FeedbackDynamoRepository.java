@@ -37,7 +37,7 @@ public class FeedbackDynamoRepository implements FeedbackRepository {
                 "score", AttributeValue.fromN(String.valueOf(feedback.getScore())),
                 "urgency", AttributeValue.fromS(feedback.getUrgency().name()),
                 "createdAt", AttributeValue.fromS(feedback.getCreatedAt().toString()),
-                "semana", AttributeValue.fromS(semanaIso(feedback.getCreatedAt()))
+                "week", AttributeValue.fromS(semanaIso(feedback.getCreatedAt()))
         );
 
         PutItemRequest request = PutItemRequest.builder()
