@@ -1,10 +1,9 @@
-package infra;
+package infra.dtos;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import infra.dtos.CriticalFeedbackMessageDTO;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +11,7 @@ import java.time.Instant;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class CriticalFeedbackMessageContractTest {
+class CriticalFeedbackMessageDTOTest {
 
     private static final String CONTRATO = """
             {

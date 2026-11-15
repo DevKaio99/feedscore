@@ -6,7 +6,7 @@ import java.util.UUID;
 public record FeedbackResponseDTO (
         UUID id,
         String description,
-        int Score,
+        int score,
         String urgency,
         Instant createdAt
 ) {
