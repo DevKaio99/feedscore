@@ -16,7 +16,7 @@ import java.util.Map;
 @ApplicationScoped
 public class FeedbackDynamoReader implements FeedbackReader {
 
-    private static final String INDEX_NAME = "semana-createdAt-index";
+    private static final String INDEX_NAME = "week-createdAt-index";
 
     private final DynamoDbClient dynamoDbClient;
     private final String tableName;
@@ -32,8 +32,8 @@ public class FeedbackDynamoReader implements FeedbackReader {
         QueryRequest request = QueryRequest.builder()
                 .tableName(tableName)
                 .indexName(INDEX_NAME)
-                .keyConditionExpression("semana = :semana")
-                .expressionAttributeValues(Map.of(":semana", AttributeValue.fromS(week)))
+                .keyConditionExpression("week = :week")
+                .expressionAttributeValues(Map.of(":week", AttributeValue.fromS(week)))
                 .build();
 
         return dynamoDbClient.queryPaginator(request)

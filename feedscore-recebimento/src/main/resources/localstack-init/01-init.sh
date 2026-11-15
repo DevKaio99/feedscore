@@ -3,13 +3,13 @@ awslocal dynamodb create-table \
   --table-name feedscore-feedbacks \
   --attribute-definitions \
       AttributeName=id,AttributeType=S \
-      AttributeName=semana,AttributeType=S \
+      AttributeName=week,AttributeType=S \
       AttributeName=createdAt,AttributeType=S \
   --key-schema AttributeName=id,KeyType=HASH \
   --global-secondary-indexes '[{
-      "IndexName": "semana-createdAt-index",
+      "IndexName": "week-createdAt-index",
       "KeySchema": [
-        {"AttributeName": "semana", "KeyType": "HASH"},
+        {"AttributeName": "week", "KeyType": "HASH"},
         {"AttributeName": "createdAt", "KeyType": "RANGE"}
       ],
       "Projection": {"ProjectionType": "ALL"}

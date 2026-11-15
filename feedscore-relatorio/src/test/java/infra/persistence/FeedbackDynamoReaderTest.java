@@ -57,7 +57,7 @@ class FeedbackDynamoReaderTest {
                 "score", AttributeValue.fromN(String.valueOf(nota)),
                 "urgency", AttributeValue.fromS(urgencia),
                 "createdAt", AttributeValue.fromS(createdAt),
-                "semana", AttributeValue.fromS(semana)
+                "week", AttributeValue.fromS(semana)
         );
 
         dynamoDbClient.putItem(PutItemRequest.builder()
