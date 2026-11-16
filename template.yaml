@@ -1,0 +1,186 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: FeedScore - plataforma serverless de feedback de aulas
+
+Parameters:
+  SesSender:
+    Type: String
+    Description: E-mail verificado no SES usado como remetente
+  SesRecipients:
+    Type: String
+    Description: E-mails dos administradores, separados por virgula, verificados no SES
+
+Globals:
+  Function:
+    Runtime: provided.al2023
+    Architectures:
+      - x86_64
+    Handler: not.used.in.provided.runtime
+    MemorySize: 256
+    Timeout: 15
+    Environment:
+      Variables:
+        DISABLE_SIGNAL_HANDLERS: true
+    Tags:
+      Project: feedscore
+
+Resources:
+  FeedbackTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: !Sub ${AWS::StackName}-feedbacks
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+        - AttributeName: week
+          AttributeType: S
+        - AttributeName: createdAt
+          AttributeType: S
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
+      GlobalSecondaryIndexes:
+        - IndexName: week-createdAt-index
+          KeySchema:
+            - AttributeName: week
+              KeyType: HASH
+            - AttributeName: createdAt
+              KeyType: RANGE
+          Projection:
+            ProjectionType: ALL
+      Tags:
+        - Key: Project
+          Value: feedscore
+
+  CriticalFeedbackDLQ:
+      Type: AWS::SQS::Queue
+      Properties:
+        QueueName: !Sub ${AWS::StackName}-critical-feedbacks-dlq
+        MessageRetentionPeriod: 1209600
+        SqsManagedSseEnabled: true
+        Tags:
+          - Key: Project
+            Value: feedscore
+
+  CriticalFeedbackQueue:
+      Type: AWS::SQS::Queue
+      Properties:
+        QueueName: !Sub ${AWS::StackName}-critical-feedbacks
+        VisibilityTimeout: 90
+        MessageRetentionPeriod: 345600
+        SqsManagedSseEnabled: true
+        RedrivePolicy:
+          deadLetterTargetArn: !GetAtt CriticalFeedbackDLQ.Arn
+          maxReceiveCount: 3
+        Tags:
+          - Key: Project
+            Value: feedscore
+
+  FeedbackApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      Name: !Sub ${AWS::StackName}-api
+      StageName: prod
+      OpenApiVersion: '3.0.1'
+      Auth:
+        ApiKeyRequired: true
+        UsagePlan:
+          CreateUsagePlan: PER_API
+          UsagePlanName: !Sub ${AWS::StackName}-usage-plan
+          Throttle:
+            RateLimit: 5
+            BurstLimit: 10
+          Quota:
+            Limit: 1000
+            Period: DAY
+      Tags:
+        Project: feedscore
+
+  ReceiveFeedbackFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub ${AWS::StackName}-recebimento
+      Description: Recebe a avaliacao, grava no DynamoDB e publica as criticas na fila
+      CodeUri: feedscore-recebimento/target/function.zip
+      Environment:
+        Variables:
+          FEEDSCORE_TABLE_NAME: !Ref FeedbackTable
+          FEEDSCORE_QUEUE_URL: !Ref CriticalFeedbackQueue
+      Policies:
+        - Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Action: dynamodb:PutItem
+              Resource: !GetAtt FeedbackTable.Arn
+            - Effect: Allow
+              Action: sqs:SendMessage
+              Resource: !GetAtt CriticalFeedbackQueue.Arn
+      Events:
+        PostAvaliacao:
+          Type: Api
+          Properties:
+            RestApiId: !Ref FeedbackApi
+            Path: /avaliacao
+            Method: post
+
+  NotifyCriticalFeedbackFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub ${AWS::StackName}-notificacao
+      Description: Consome a fila de criticos e envia o alerta por e-mail aos administradores
+      CodeUri: feedscore-notificacao/target/function.zip
+      Environment:
+        Variables:
+          FEEDSCORE_SES_SENDER: !Ref SesSender
+          FEEDSCORE_SES_RECIPIENTS: !Ref SesRecipients
+      Policies:
+        - Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Action: ses:SendEmail
+              Resource: !Sub arn:aws:ses:${AWS::Region}:${AWS::AccountId}:identity/*
+              Condition:
+                StringEquals:
+                  ses:FromAddress: !Ref SesSender
+      Events:
+        CriticalFeedbackQueueEvent:
+          Type: SQS
+          Properties:
+            Queue: !GetAtt CriticalFeedbackQueue.Arn
+            BatchSize: 5
+            FunctionResponseTypes:
+              - ReportBatchItemFailures
+
+  WeeklyReportFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub ${AWS::StackName}-relatorio
+      Description: Gera o relatorio da semana anterior e envia por e-mail
+      CodeUri: feedscore-relatorio/target/function.zip
+      Timeout: 30
+      Environment:
+        Variables:
+          FEEDSCORE_TABLE_NAME: !Ref FeedbackTable
+          FEEDSCORE_SES_SENDER: !Ref SesSender
+          FEEDSCORE_SES_RECIPIENTS: !Ref SesRecipients
+      Policies:
+        - Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Action: dynamodb:Query
+              Resource: !Sub ${FeedbackTable.Arn}/index/week-createdAt-index
+            - Effect: Allow
+              Action: ses:SendEmail
+              Resource: !Sub arn:aws:ses:${AWS::Region}:${AWS::AccountId}:identity/*
+              Condition:
+                StringEquals:
+                  ses:FromAddress: !Ref SesSender
+
+Outputs:
+  ApiUrl:
+    Description: URL do endpoint de avaliacao
+    Value: !Sub https://${FeedbackApi}.execute-api.${AWS::Region}.amazonaws.com/prod/avaliacao
+  ApiKeyId:
+    Description: ID da API key (use o CLI para obter o valor)
+    Value: !Ref FeedbackApiApiKey
