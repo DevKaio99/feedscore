@@ -9,6 +9,9 @@ Parameters:
   SesRecipients:
     Type: String
     Description: E-mails dos administradores, separados por virgula, verificados no SES
+  AlarmEmail:
+    Type: String
+    Description: E-mail que recebe as notificacoes dos alarmes de monitoramento
 
 Globals:
   Function:
@@ -176,6 +179,200 @@ Resources:
               Condition:
                 StringEquals:
                   ses:FromAddress: !Ref SesSender
+      EventInvokeConfig:
+        MaximumRetryAttempts: 0
+      Events:
+        WeeklySchedule:
+          Type: Schedule
+          Properties:
+            Name: !Sub ${AWS::StackName}-relatorio-semanal
+            Description: Toda segunda-feira as 08h de Brasilia (11h UTC)
+            Schedule: cron(0 11 ? * MON *)
+            Enabled: true
+
+  ReceiveFeedbackLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub /aws/lambda/${ReceiveFeedbackFunction}
+      RetentionInDays: 7
+
+  NotifyCriticalFeedbackLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub /aws/lambda/${NotifyCriticalFeedbackFunction}
+      RetentionInDays: 7
+
+  WeeklyReportLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub /aws/lambda/${WeeklyReportFunction}
+      RetentionInDays: 7
+
+  AlarmTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      TopicName: !Sub ${AWS::StackName}-alarmes
+      Subscription:
+        - Protocol: email
+          Endpoint: !Ref AlarmEmail
+      Tags:
+        - Key: Project
+          Value: feedscore
+
+  ApiServerErrorsAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub ${AWS::StackName}-api-erros-5xx
+      AlarmDescription: A API respondeu com erro 5xx (falha no recebimento de avaliacoes)
+      Namespace: AWS/ApiGateway
+      MetricName: 5XXError
+      Dimensions:
+        - Name: ApiName
+          Value: !Sub ${AWS::StackName}-api
+        - Name: Stage
+          Value: prod
+      Statistic: Sum
+      Period: 300
+      EvaluationPeriods: 1
+      Threshold: 0
+      ComparisonOperator: GreaterThanThreshold
+      TreatMissingData: notBreaching
+      AlarmActions:
+        - !Ref AlarmTopic
+
+  ReceiveFeedbackErrorsAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub ${AWS::StackName}-recebimento-erros
+      AlarmDescription: A funcao de recebimento falhou (timeout ou erro de inicializacao)
+      Namespace: AWS/Lambda
+      MetricName: Errors
+      Dimensions:
+        - Name: FunctionName
+          Value: !Ref ReceiveFeedbackFunction
+      Statistic: Sum
+      Period: 300
+      EvaluationPeriods: 1
+      Threshold: 0
+      ComparisonOperator: GreaterThanThreshold
+      TreatMissingData: notBreaching
+      AlarmActions:
+        - !Ref AlarmTopic
+
+  NotifyCriticalFeedbackErrorsAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub ${AWS::StackName}-notificacao-erros
+      AlarmDescription: A funcao de notificacao falhou (timeout ou erro de inicializacao)
+      Namespace: AWS/Lambda
+      MetricName: Errors
+      Dimensions:
+        - Name: FunctionName
+          Value: !Ref NotifyCriticalFeedbackFunction
+      Statistic: Sum
+      Period: 300
+      EvaluationPeriods: 1
+      Threshold: 0
+      ComparisonOperator: GreaterThanThreshold
+      TreatMissingData: notBreaching
+      AlarmActions:
+        - !Ref AlarmTopic
+
+  CriticalFeedbackDLQAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub ${AWS::StackName}-dlq-mensagens
+      AlarmDescription: Alerta critico nao enviado apos 3 tentativas (mensagem na DLQ)
+      Namespace: AWS/SQS
+      MetricName: ApproximateNumberOfMessagesVisible
+      Dimensions:
+        - Name: QueueName
+          Value: !GetAtt CriticalFeedbackDLQ.QueueName
+      Statistic: Maximum
+      Period: 300
+      EvaluationPeriods: 1
+      Threshold: 0
+      ComparisonOperator: GreaterThanThreshold
+      TreatMissingData: notBreaching
+      AlarmActions:
+        - !Ref AlarmTopic
+
+  WeeklyReportErrorsAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub ${AWS::StackName}-relatorio-erros
+      AlarmDescription: O relatorio semanal falhou e nao sera reenviado automaticamente
+      Namespace: AWS/Lambda
+      MetricName: Errors
+      Dimensions:
+        - Name: FunctionName
+          Value: !Ref WeeklyReportFunction
+      Statistic: Sum
+      Period: 300
+      EvaluationPeriods: 1
+      Threshold: 0
+      ComparisonOperator: GreaterThanThreshold
+      TreatMissingData: notBreaching
+      AlarmActions:
+        - !Ref AlarmTopic
+  MonitoringDashboard:
+    Type: AWS::CloudWatch::Dashboard
+    Properties:
+      DashboardName: !Sub ${AWS::StackName}-dashboard
+      DashboardBody: !Sub |
+        {
+          "widgets": [
+            {
+              "type": "metric", "x": 0, "y": 0, "width": 12, "height": 6,
+              "properties": {
+                "title": "API - requisicoes e erros",
+                "region": "${AWS::Region}", "view": "timeSeries", "stat": "Sum", "period": 300,
+                "metrics": [
+                  ["AWS/ApiGateway", "Count", "ApiName", "${AWS::StackName}-api", "Stage", "prod"],
+                  ["AWS/ApiGateway", "4XXError", "ApiName", "${AWS::StackName}-api", "Stage", "prod"],
+                  ["AWS/ApiGateway", "5XXError", "ApiName", "${AWS::StackName}-api", "Stage", "prod"]
+                ]
+              }
+            },
+            {
+              "type": "metric", "x": 12, "y": 0, "width": 12, "height": 6,
+              "properties": {
+                "title": "Filas - criticos publicados e DLQ",
+                "region": "${AWS::Region}", "view": "timeSeries", "period": 300,
+                "metrics": [
+                  ["AWS/SQS", "NumberOfMessagesSent", "QueueName", "${CriticalFeedbackQueue.QueueName}", {"stat": "Sum", "label": "Criticos publicados"}],
+                  ["AWS/SQS", "ApproximateNumberOfMessagesVisible", "QueueName", "${CriticalFeedbackDLQ.QueueName}", {"stat": "Maximum", "label": "Mensagens na DLQ"}]
+                ]
+              }
+            },
+            {
+              "type": "metric", "x": 0, "y": 6, "width": 8, "height": 6,
+              "properties": {
+                "title": "Lambdas - invocacoes",
+                "region": "${AWS::Region}", "view": "timeSeries", "stat": "Sum", "period": 300,
+                "metrics": [
+                  ["AWS/Lambda", "Invocations", "FunctionName", "${ReceiveFeedbackFunction}"],
+                  ["AWS/Lambda", "Invocations", "FunctionName", "${NotifyCriticalFeedbackFunction}"],
+                  ["AWS/Lambda", "Invocations", "FunctionName", "${WeeklyReportFunction}"]
+                ]
+              }
+            },
+            {
+              "type": "metric", "x": 8, "y": 6, "width": 8, "height": 6,
+              "properties": {
+                "title": "Lambdas - erros",
+                "region": "${AWS::Region}", "view": "timeSeries", "stat": "Sum", "period": 300,
+                "metrics": [
+                  ["AWS/Lambda", "Errors", "FunctionName", "${ReceiveFeedbackFunction}"],
+                  ["AWS/Lambda", "Errors", "FunctionName", "${NotifyCriticalFeedbackFunction}"],
+                  ["AWS/Lambda", "Errors", "FunctionName", "${WeeklyReportFunction}"]
+                ]
+              }
+            },
+            {
+              "type": "metric", "x": 16, "y": 6, "width": 8, "height": 6,
+              "properties": {
+                "title": "Lambdas - duracao media (ms)",
 
 Outputs:
   ApiUrl:
