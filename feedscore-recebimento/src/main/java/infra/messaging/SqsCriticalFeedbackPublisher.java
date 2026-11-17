@@ -43,7 +43,7 @@ public class SqsCriticalFeedbackPublisher implements CriticalFeedbackPublisher {
         try {
             return objectMapper.writeValueAsString(message);
         } catch (JsonProcessingException e) {
-            throw new IllegalStateException("Falha ao serializar a mensagem do feedback");
+            throw new IllegalStateException("Falha ao serializar a mensagem do feedback", e);
         }
     }
 }
