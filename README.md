@@ -22,7 +22,22 @@ CloudWatch (logs, alarmes, dashboard) ──► SNS ──► e-mail do administ
 | `feedscore-notificacao` | Envia o e-mail de urgência | SQS (lotes de até 5) | `ses:SendEmail` |
 | `feedscore-relatorio` | Gera e envia o relatório da semana anterior | EventBridge (segunda, 08h) | `dynamodb:Query` no índice, `ses:SendEmail` |
 
-Cada módulo segue Clean Architecture (`domain`, `application`, `infra`) e cada função tem uma role IAM própria, com acesso apenas ao que utiliza.
+Cada função tem uma role IAM própria, com acesso apenas ao que utiliza.
+
+## Clean Architecture
+
+Cada função é um módulo Maven independente, organizado em camadas com as regras de negócio isoladas da AWS e do Quarkus:
+
+```
+feedscore-<modulo>/src/main/java/
+├── domain/        entidades, enums, modelos e contratos (ex.: Feedback, Urgency, FeedbackRepository)
+├── application/   casos de uso, inputs e gateways, em Java puro (ex.: SubmitFeedbackUseCase)
+└── infra/         controller e handlers, adapters de DynamoDB/SQS/SES, DTOs, mappers e configuração
+```
+
+- O `domain` não depende de nenhuma outra camada; o `application` depende apenas do domínio e de interfaces; somente o `infra` conhece Quarkus e AWS SDK.
+- Os casos de uso são classes sem anotações de framework, instanciadas por produtores CDI (`@Produces`) em `UseCaseConfig`.
+- A Notificação não tem camada de domínio: ela apenas formata e envia o alerta a partir da mensagem da fila.
 
 ## Endpoint
 
@@ -67,6 +82,8 @@ curl -i -X POST http://localhost:8080/avaliacao \
 | Recebimento | 8080 |
 | Notificação | 8082 |
 | Relatório | 8083 |
+
+Testes: unitários (domínio e casos de uso, com Mockito e `Clock` fixo), de endpoint (REST Assured), de contrato da mensagem da fila (nos dois módulos) e de integração com o DynamoDB via LocalStack.
 
 ## Deploy na AWS
 
