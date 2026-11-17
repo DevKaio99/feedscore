@@ -6,6 +6,10 @@ Parameters:
     Type: String
     Default: DevKaio99/feedscore
     Description: Repositorio autorizado a fazer deploy (dono/nome)
+  GitHubRepoWithIds:
+    Type: String
+    Default: DevKaio99@175990519/feedscore@1422648837
+    Description: Mesmo repositorio no formato com IDs (repos criados a partir de 15/07/2026)
   GitHubBranch:
     Type: String
     Default: main
@@ -76,7 +80,9 @@ Resources:
             Condition:
               StringEquals:
                 token.actions.githubusercontent.com:aud: sts.amazonaws.com
-                token.actions.githubusercontent.com:sub: !Sub repo:${GitHubRepo}:ref:refs/heads/${GitHubBranch}
+                token.actions.githubusercontent.com:sub:
+                  - !Sub repo:${GitHubRepo}:ref:refs/heads/${GitHubBranch}
+                  - !Sub repo:${GitHubRepoWithIds}:ref:refs/heads/${GitHubBranch}
       Policies:
         - PolicyName: deploy-via-cloudformation
           PolicyDocument:
